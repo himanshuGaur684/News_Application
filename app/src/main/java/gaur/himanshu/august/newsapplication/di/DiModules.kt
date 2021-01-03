@@ -4,6 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
+import gaur.himanshu.august.newsapplication.NewsRepository
 import gaur.himanshu.august.newsapplication.retrofit.NewsInterface
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -25,6 +26,13 @@ object DiModules {
     @Provides
     fun provideNewsInterface(retrofit: Retrofit): NewsInterface {
         return retrofit.create(NewsInterface::class.java)
+    }
+
+
+    @Singleton
+    @Provides
+    fun provideRepository(newsInterface: NewsInterface): NewsRepository {
+        return NewsRepository(newsInterface)
     }
 
 }
