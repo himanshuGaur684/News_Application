@@ -86,4 +86,7 @@ dependencies {
 
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02"
     kapt "androidx.hilt:hilt-compiler:1.0.0-alpha02"
+
+    // paging 3
+    implementation "androidx.paging:paging-runtime-ktx:3.0.0-alpha11"
 }
