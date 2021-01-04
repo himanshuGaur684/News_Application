@@ -3,6 +3,12 @@
 
     <data>
 
+        <import type="gaur.himanshu.august.newsapplication.retrofit.responce.Article" />
+
+        <variable
+            name="article"
+            type="Article" />
+
     </data>
 
     <RelativeLayout
@@ -21,6 +27,7 @@
             style="@style/TextAppearance.AppCompat.Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{article.title}"
             android:layout_below="@+id/image_list_item"
             android:padding="8dp" />
 
