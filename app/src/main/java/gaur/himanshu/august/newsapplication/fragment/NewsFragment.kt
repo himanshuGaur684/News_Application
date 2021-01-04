@@ -5,23 +5,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import dagger.hilt.android.AndroidEntryPoint
 import gaur.himanshu.august.newsapplication.NewsViewModel
 import gaur.himanshu.august.newsapplication.R
+import gaur.himanshu.august.newsapplication.aapters.AdapterClicklListioners
 import gaur.himanshu.august.newsapplication.aapters.NewsPagingAdapter
+import gaur.himanshu.august.newsapplication.retrofit.responce.Article
 import kotlinx.android.synthetic.main.fragment_news.view.*
 
 
 @AndroidEntryPoint
-class NewsFragment : Fragment() {
+class NewsFragment : Fragment(), AdapterClicklListioners {
 
 
     private val viewModel by viewModels<NewsViewModel>()
 
-    private val newsPagingAdapter = NewsPagingAdapter()
+    private val newsPagingAdapter = NewsPagingAdapter(this)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -59,6 +63,13 @@ class NewsFragment : Fragment() {
 
         view.news_recycler.adapter = newsPagingAdapter
 
+    }
+
+    override fun clickListioners(article: Article) {
+        findNavController().navigate(
+            R.id.action_newsFragment_to_detailsFragment,
+            bundleOf("article" to article)
+        )
     }
 
 }

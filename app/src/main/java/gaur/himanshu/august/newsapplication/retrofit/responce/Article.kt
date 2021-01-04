@@ -1,5 +1,6 @@
 package gaur.himanshu.august.newsapplication.retrofit.responce
 
+
 data class Article(
     val author: String,
     val content: String,

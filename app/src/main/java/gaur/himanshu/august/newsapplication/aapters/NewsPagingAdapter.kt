@@ -12,7 +12,8 @@ import gaur.himanshu.august.newsapplication.databinding.ListItemBinding
 import gaur.himanshu.august.newsapplication.retrofit.responce.Article
 import kotlinx.android.synthetic.main.list_item.view.*
 
-class NewsPagingAdapter : PagingDataAdapter<Article, NewsPagingAdapter.MyViewHolder>(DIFF_UTIL) {
+class NewsPagingAdapter(val adapterClicklListioners: AdapterClicklListioners) :
+    PagingDataAdapter<Article, NewsPagingAdapter.MyViewHolder>(DIFF_UTIL) {
 
     companion object {
         val DIFF_UTIL = object : DiffUtil.ItemCallback<Article>() {
@@ -40,6 +41,10 @@ class NewsPagingAdapter : PagingDataAdapter<Article, NewsPagingAdapter.MyViewHol
         Glide.with(holder.viewDataBinding.root).load(item!!.urlToImage)
             .into(holder.viewDataBinding.root.image_list_item)
 
+
+        holder.viewDataBinding.root.list_item_root.setOnClickListener {
+            adapterClicklListioners.clickListioners(item)
+        }
 
     }
 

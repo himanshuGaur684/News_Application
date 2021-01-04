@@ -1,6 +1,7 @@
 package gaur.himanshu.august.newsapplication.retrofit.responce
 
+
 data class Source(
-    val id: Any,
+    val id: String?,
     val name: String
 )
