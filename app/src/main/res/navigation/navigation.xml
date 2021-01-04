@@ -18,5 +18,11 @@
         android:id="@+id/detailsFragment"
         android:name="gaur.himanshu.august.newsapplication.fragment.DetailsFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="article"
+            android:defaultValue="@null"
+            app:argType="gaur.himanshu.august.newsapplication.retrofit.responce.Article"
+            app:nullable="true" />
+    </fragment>
 </navigation>

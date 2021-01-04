@@ -20,12 +20,11 @@ class DetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentDetailsBinding.inflate(inflater, container, false)
+        val data = requireArguments()["article"] as Article
 
-        val args = requireArguments().get("article") as Article
+        binding.articles = data
 
-        binding.articles = args
-
-        Glide.with(binding.root).load(args.urlToImage).into(binding.deatilsImage)
+        Glide.with(binding.root).load(data.urlToImage).into(binding.detailsImage)
 
         return binding.root
     }

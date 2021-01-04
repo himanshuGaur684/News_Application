@@ -5,7 +5,6 @@
     <data>
 
         <import type="gaur.himanshu.august.newsapplication.retrofit.responce.Article" />
-
         <variable
             name="articles"
             type="Article" />
@@ -19,7 +18,7 @@
         tools:context=".fragment.DetailsFragment">
 
         <ImageView
-            android:id="@+id/deatils_image"
+            android:id="@+id/details_image"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:scaleType="centerCrop" />
@@ -28,20 +27,29 @@
             style="@style/TextAppearance.AppCompat.Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{articles.title}" />
+            android:layout_gravity="center_horizontal"
+            android:padding="10dp"
+            android:text="@{articles.title}"
+            tools:text="Jai Shree Ram" />
 
 
         <TextView
             style="@style/TextAppearance.AppCompat.Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{articles.description]" />
+            android:layout_gravity="center_horizontal"
+            android:padding="10dp"
+            android:text="@{articles.description}"
+            tools:text="Jai Shree Ram" />
 
         <TextView
             style="@style/TextAppearance.AppCompat.Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{articles.content]" />
+            android:layout_gravity="center_horizontal"
+            android:padding="10dp"
+            android:text="@{articles.content}"
+            tools:text="Jai Shree Ram" />
 
     </LinearLayout>
 </layout>

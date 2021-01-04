@@ -59,8 +59,6 @@ class NewsFragment : Fragment(), AdapterClicklListioners {
             }
 
         }
-
-
         view.news_recycler.adapter = newsPagingAdapter
 
     }
