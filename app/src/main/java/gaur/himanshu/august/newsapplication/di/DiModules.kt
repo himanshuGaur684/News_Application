@@ -35,4 +35,5 @@ object DiModules {
         return NewsRepository(newsInterface)
     }
 
+
 }
