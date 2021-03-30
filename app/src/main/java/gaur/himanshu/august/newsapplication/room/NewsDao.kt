@@ -9,8 +9,12 @@ import gaur.himanshu.august.newsapplication.retrofit.responce.Article
 
 @Dao
 interface NewsDao {
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertArticles(list: List<Article>)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertArticleSingle(article: Article)
 
     @Query("SELECT * FROM Article ")
     fun getAllArticles(): PagingSource<Int, Article>
@@ -23,7 +27,7 @@ interface NewsDao {
     suspend fun insertAllRemoteKeys(list: List<ArticleRemoteKey>)
 
 
-    @Query("SELECT * FROM ARTICLEREMOTEKEY WHERE id = :id")
+    @Query("SELECT * FROM ArticleRemoteKey WHERE id = :id")
     suspend fun getAllREmoteKey(id: String): ArticleRemoteKey?
 
     @Query("DELETE FROM ArticleRemoteKey")
